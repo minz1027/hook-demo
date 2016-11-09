@@ -6,6 +6,7 @@ shared:
 jobs:
     main:
         steps:
+            - sleep: sleep 5m
             - print: echo Starting main job!
     second:
         steps:
