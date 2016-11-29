@@ -1,8 +1,7 @@
 {
   "name": "hook-demo",
-  "version": "0.0.0-development",
   "description": "# This is for testing only.",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -25,5 +24,6 @@
   "homepage": "https://github.com/minz1027/hook-demo#readme",
   "devDependencies": {
     "semantic-release": "^6.3.2"
-  }
+  },
+  "version": "0.0.0-development"
 }
