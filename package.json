@@ -1,7 +1,8 @@
 {
   "name": "hook-demo",
   "description": "# This is for testing only.",
-  "main": "",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"

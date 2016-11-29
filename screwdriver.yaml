@@ -6,9 +6,10 @@ shared:
 jobs:
     main:
         steps:
-            - install: npm install
+            - print: echo the main jobs started!
     publish:
         steps:
+            - install: npm install
             - semantic-release: npm run semantic-release
         secrets:
             - GH_TOKEN
