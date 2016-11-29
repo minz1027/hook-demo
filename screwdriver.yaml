@@ -6,8 +6,10 @@ shared:
 jobs:
     main:
         steps:
-            - sleep: sleep 10
-            - print: echo Starting main job!
-    second:
+            - install: npm install
+    publish:
         steps:
-            - print: echo Starting second job!
+            - publish: npm run semantic-release
+        secrets:
+            - GH_TOKEN
+            - NPM_TOKEN
