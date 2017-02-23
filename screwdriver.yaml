@@ -5,8 +5,8 @@ shared:
     image: node:6
 jobs:
     main:
-        enviroment:
-            email: min@gmail.com
+        environment:
+            EMAIL: min@gmail.com
         image: golang
         steps:
             - print: echo the main jobs started!
