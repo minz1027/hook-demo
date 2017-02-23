@@ -5,7 +5,7 @@ shared:
     image: node:6
 jobs:
     main:
-        settings:
+        enviroment:
             email: min@gmail.com
         image: golang
         steps:
