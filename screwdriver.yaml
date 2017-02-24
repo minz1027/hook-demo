@@ -9,6 +9,7 @@ jobs:
             EMAIL: min@gmail.com
         image: golang
         steps:
+            - whoami: whoami
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
