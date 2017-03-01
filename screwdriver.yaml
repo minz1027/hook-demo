@@ -13,10 +13,10 @@ jobs:
             - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - cd: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli
-            - get: go get -t ./...
+            - go-get: go get -t ./...
             - build: go build -a -o meta-cli
             - mk: mkdir /sd/meta
-            - run: chmod 600 /sd/meta
+            - run: chmod 000 /sd/meta
             - set: ./meta-cli set foo bar &&  echo $?
             - get: ./meta-cli get x
             - print: echo the main jobs started!
