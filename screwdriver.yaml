@@ -20,10 +20,11 @@ jobs:
             - show: ./meta-cli
             - set: ./meta-cli set foo bar &&  echo $?
             - get: ./meta-cli get foo && echo $?
-            - cat: cat /sd/meta/meta.json
+            - cat: cat /sd/meta/meta.json && echo $?
             - chmod-000: chmod 000 /sd/meta/meta.json
-            - set-again: ./meta-cli set x bar &&  echo $?
-            - get-again: ./meta-cli get x
+            - set-again: ./meta-cli set x bar && echo $?
+            - get-again: ./meta-cli get x && echo $?
+            - cat-again: cat /sd/meta/meta.json && echo $?
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
