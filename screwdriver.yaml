@@ -9,22 +9,21 @@ shared:
 jobs:
     main:
         steps:
-            - pwd: pwd
             - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
-            - cd: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
+            - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli && git pull
+            - check-branch: git branch
             - go-get: go get -t ./...
             - build: go build -a -o meta-cli
             - mk: mkdir /sd/meta
-            - ls: ls
-            - run: chmod 777 /sd/meta
+            - chmod-777: chmod 777 /sd/meta
             - show: ./meta-cli
             - set: ./meta-cli set foo bar &&  echo $?
-            - get: ./meta-cli get foo
+            - get: ./meta-cli get foo && echo $?
             - cat: cat /sd/meta/meta.json
-            - run-e: chmod 000 /sd/meta
-            - set-ag: ./meta-cli set x bar &&  echo $?
-            - get-ag: ./meta-cli get x
+            - chmod-000: chmod 000 /sd/meta/meta.json
+            - set-again: ./meta-cli set x bar &&  echo $?
+            - get-again: ./meta-cli get x
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
