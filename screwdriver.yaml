@@ -18,7 +18,7 @@ jobs:
             - mk: mkdir /sd/meta
             - run: chmod 777 /sd/meta
             - set: ./meta-cli set foo bar &&  echo $?
-            - get: ./meta-cli get foo
+            - get: export FOO=./meta-cli get foo && echo $FOO
             - run-e: chmod 000 /sd/meta
             - set-ag: ./meta-cli set x bar &&  echo $?
             - get-ag: ./meta-cli get x
