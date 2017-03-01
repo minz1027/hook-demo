@@ -9,8 +9,11 @@ jobs:
             EMAIL: min@gmail.com
         image: golang
         steps:
-            - whoami: whoami
-            - echo: echo $SD_TOKEN
+            - clone: git clone git@github.com:tk3fftk/meta-cli.git
+            - build: cd meta-cli && go build -a -o meta-cli
+            - run: sudo chmod 600 /sd/meta
+            - set: ./meta-cli set foo bar &&  echo $?
+            - get: ./meta-cli get foo
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
