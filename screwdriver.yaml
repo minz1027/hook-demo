@@ -8,10 +8,9 @@ shared:
         
 jobs:
     main:
-        environment:
-            EMAIL: min@gmail.com
-        image: golang
         steps:
+            - pwd: pwd
+            - gopath: cd $GOPATH/src/
             - clone: git clone https://github.com/tk3fftk/meta-cli.git
             - checkout: cd meta-cli && git checkout meta-cli
             - build: go build -a -o meta-cli
