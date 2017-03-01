@@ -15,6 +15,7 @@ jobs:
     publish:
         steps:
             - install: npm install
+            - echo: echo $SD_TOKEN
             - setup-ci: git clone https://gist.github.com/3d2388b2a7ba658cdcdaffa8cd874e50.git ci
             - release: ./ci/git-release.sh
         secrets:
