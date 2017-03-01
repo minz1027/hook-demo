@@ -15,9 +15,10 @@ jobs:
             - checkout: git checkout meta-cli
             - get: go get -t ./...
             - build: go build -a -o meta-cli
+            - mk: mkdir /sd/meta
             - run: chmod 600 /sd/meta
             - set: ./meta-cli set foo bar &&  echo $?
-            - get: ./meta-cli get foo
+            - get: ./meta-cli get x
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
