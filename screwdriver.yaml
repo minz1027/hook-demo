@@ -2,7 +2,10 @@
 workflow:
     - publish
 shared:
-    image: node:6
+    image: golang
+    environment:
+        GOPATH: /sd/workspace
+        
 jobs:
     main:
         environment:
