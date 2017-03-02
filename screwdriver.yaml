@@ -20,6 +20,7 @@ jobs:
             - show: ./meta-cli
             - set: ./meta-cli set foo bar &&  echo $?
             - get: echo hello && ./meta-cli get foo
+            - append-newline: echo -e "\n" >> /sd/meta/meta.json
             - cat: echo hello && cat /sd/meta/meta.json
             - chmod-000: chmod 000 /sd/meta/meta.json
             - set-again: ./meta-cli set x bar && echo $?
