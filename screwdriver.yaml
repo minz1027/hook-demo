@@ -9,14 +9,6 @@ shared:
 jobs:
     main:
         steps:
-            - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
-            - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
-            - checkout: git checkout meta-cli && git pull
-            - check-branch: git branch
-            - go-get: go get -t ./...
-            - build: go build -a -o meta-cli
-            - mk: mkdir /sd/meta
-            - chmod-777: chmod 777 /sd/meta
             - show: ./meta-cli
             - set: ./meta-cli set foo bar &&  echo $?
             - get: ./meta-cli get foo && echo $?
