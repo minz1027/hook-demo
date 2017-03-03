@@ -9,9 +9,10 @@ shared:
 jobs:
     main:
         steps:
-            - show: ./meta
-            - set: ./meta set foo bar &&  echo $?
-            - get: ./meta get foo && echo $?
+            - ls: ls
+            - show: /opt/sd/meta
+            - set: /opt/sd/meta set foo bar &&  echo $?
+            - get: /opt/sd/meta get foo && echo $?
             - append-newline: echo "\n" >> /sd/meta/meta.json
             - cat: cat /sd/meta/meta.json
             - chmod-000: chmod 000 /sd/meta/meta.json
