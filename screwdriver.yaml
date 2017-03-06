@@ -14,6 +14,7 @@ jobs:
             - set: /opt/sd/meta set foo bar &&  echo $?
             - get: /opt/sd/meta get foo
             - cat: cat /sd/meta/meta.json
+            - sleep: sleep 500
             - chmod-000: chmod 000 /sd/meta/meta.json
             - set-again: ./meta set x bar && echo $?
             - get-again: ./meta get x && echo $?
