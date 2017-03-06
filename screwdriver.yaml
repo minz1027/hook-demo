@@ -12,8 +12,7 @@ jobs:
             - ls: ls
             - show: /opt/sd/meta
             - set: /opt/sd/meta set foo bar &&  echo $?
-            - get: /opt/sd/meta get foo && echo $?
-            - append-newline: echo "\n" >> /sd/meta/meta.json
+            - get: /opt/sd/meta get foo
             - cat: cat /sd/meta/meta.json
             - chmod-000: chmod 000 /sd/meta/meta.json
             - set-again: ./meta set x bar && echo $?
