@@ -14,7 +14,6 @@ jobs:
             - set: /opt/sd/meta set foo bar &&  echo $?
             - get: /opt/sd/meta get foo
             - cat: cat /sd/meta/meta.json
-            - sleep: sleep 500
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
