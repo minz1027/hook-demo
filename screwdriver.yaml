@@ -15,19 +15,9 @@ jobs:
             - get: /opt/sd/meta get foo
             - cat: cat /sd/meta/meta.json
             - sleep: sleep 500
-            - chmod-000: chmod 000 /sd/meta/meta.json
-            - set-again: ./meta set x bar && echo $?
-            - get-again: ./meta get x && echo $?
-            - cat-again: cat /sd/meta/meta.json && echo $?
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
         steps:
-            - install: npm install
+            - meta-get: /opt/sd/meta get foo
             - echo: echo $SD_TOKEN
-            - setup-ci: git clone https://gist.github.com/3d2388b2a7ba658cdcdaffa8cd874e50.git ci
-            - release: ./ci/git-release.sh
-        secrets:
-            - GITHUB_TOKEN
-        environment:
-            RELEASE_FILE: README.md
