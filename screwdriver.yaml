@@ -9,6 +9,7 @@ shared:
 jobs:
     main:
         steps:
+            - echo: echo $SD_TOKEN
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
