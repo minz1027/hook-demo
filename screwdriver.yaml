@@ -1,6 +1,11 @@
 
-workflow:
-    - publish
+settings:
+    slack:
+      url: https://hooks.slack.com/services/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
+      statuses:
+        - SUCCESS
+        - FAILURE
+    
 shared:
     image: golang
     environment:
@@ -9,33 +14,5 @@ shared:
 jobs:
     main:
         steps:
-            - curl: curl -H "Authorization: Bearer $SD_TOKEN" -H "Content-Type: application/json" https://api.screwdriver.cd/v4/pipelines
-            - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
-            - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
-            - checkout: git checkout meta-cli && git pull
-            - check-branch: git branch
-            - go-get: go get -t ./...
-            - build: go build -a -o meta-cli
-            - mk: mkdir /sd/meta
-            - chmod-777: chmod 777 /sd/meta
-            - show: ./meta-cli
-            - set: ./meta-cli set foo bar &&  echo $?
-            - get: ./meta-cli get foo && echo $?
-            - append-newline: echo "\n" >> /sd/meta/meta.json
-            - cat: cat /sd/meta/meta.json
-            - chmod-000: chmod 000 /sd/meta/meta.json
-            - set-again: ./meta-cli set x bar && echo $?
-            - get-again: ./meta-cli get x && echo $?
-            - cat-again: cat /sd/meta/meta.json && echo $?
-            - print: echo the main jobs started!
-            - check-go-img: go version
-    publish:
-        steps:
-            - install: npm install
-            - echo: echo $SD_TOKEN
-            - setup-ci: git clone https://gist.github.com/3d2388b2a7ba658cdcdaffa8cd874e50.git ci
-            - release: ./ci/git-release.sh
-        secrets:
-            - GITHUB_TOKEN
-        environment:
-            RELEASE_FILE: README.md
+            - test-success: echo hello
+
