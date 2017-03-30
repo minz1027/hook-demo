@@ -3,11 +3,11 @@ shared:
     environment:
         GOPATH: /sd/workspace
     settings:
-    slack:
-      url: https://hooks.slack.com/services/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
-      statuses:
-        - SUCCESS
-        - FAILURE
+        slack:
+          url: https://hooks.slack.com/services/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
+          statuses:
+            - SUCCESS
+            - FAILURE
         
 jobs:
     main:
