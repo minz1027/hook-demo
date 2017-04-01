@@ -4,7 +4,7 @@ shared:
         GOPATH: /sd/workspace
     settings:
         slack:
-          url: https://hooks.slack.com/services/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
+          url: https://hooks.slack.com/services/
           statuses:
             - SUCCESS
             - FAILURE
