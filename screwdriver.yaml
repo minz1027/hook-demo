@@ -13,4 +13,6 @@ jobs:
     main:
         steps:
             - test-success: echo hello
+            - meta: meta set foo bar
+            - meta-get: meta get foo
 
