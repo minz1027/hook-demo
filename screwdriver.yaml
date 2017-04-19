@@ -9,8 +9,8 @@ shared:
 jobs:
     main:
         steps:
-            - test: find . -name "*" -type f -exec curl -H "Authorization: Bearer $SD_TOKEN" -H "Content-Type: text/plain" -X PUT https://store.screwdriver.cd/v1/builds/$SD_BUILD_ID/ARTIFACTS/{} -T {} \
-            - echo: echo $SD_TOKEN
+            - test: sd-step exec core/git
+            - echo: echo hello
             - print: echo the main jobs started!
             - check-go-img: go version
     publish:
