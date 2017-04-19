@@ -9,7 +9,7 @@ shared:
 jobs:
     main:
         steps:
-            - test: sd-step exec core/git
+            - test: sd-step exec core/git git clone git@github.com:minz1027/hook-demo.git
             - echo: echo hello
             - print: echo the main jobs started!
             - check-go-img: go version
