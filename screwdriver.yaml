@@ -9,7 +9,7 @@ shared:
 jobs:
     main:
         steps:
-            - test: sd-step install tomcat8
+            - test: sd-step exec tomcat8 echo done
             - echo: echo hello
             - print: echo the main jobs started!
             - check-go-img: go version
