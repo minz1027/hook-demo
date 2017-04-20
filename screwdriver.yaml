@@ -10,6 +10,8 @@ jobs:
     main:
         steps:
             - test: sd-step exec core/tomcat8 echo done
+            - meta: meta set foo bar
+            - meta-get: meta get foo
             - echo: echo hello
             - print: echo the main jobs started!
             - check-go-img: go version
