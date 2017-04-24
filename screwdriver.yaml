@@ -15,7 +15,12 @@ jobs:
             - meta-get: meta get foo
             - echo: echo hello
             - exit: exit 1
-            - print: echo the main jobs started!
+            - name: test 
+              command: echo the main jobs started!
+              alwaysRun: true
+            - name: test2 
+              command: echo the main jobs started!
+              alwaysRun: true 
             - check-go-img: go version
     publish:
         steps:
