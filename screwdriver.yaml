@@ -9,7 +9,8 @@ shared:
 jobs:
     main:
         steps:
-            - test: sd-step exec core/tomcat8 echo done
+            - test: echo hello
+            - slee: sleep 100 
             - meta: meta set foo bar
             - meta-get: meta get foo
             - echo: echo hello
