@@ -10,7 +10,7 @@ jobs:
     main:
         steps:
             - test: echo hello
-            - slee: sleep 100 
+            - sleep: sleep 100 
             - meta: meta set foo bar
             - meta-get: meta get foo
             - echo: echo hello
