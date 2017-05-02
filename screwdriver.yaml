@@ -10,9 +10,9 @@ jobs:
     main:
         steps:
             - ls: ls
-            - show: /opt/sd/meta
-            - set: /opt/sd/meta set foo bar &&  echo $?
-            - get: /opt/sd/meta get foo
+            - show: meta
+            - set: meta set foo bar &&  echo $?
+            - get: meta get foo
             - cat: cat /sd/meta/meta.json
             - print: echo the main jobs started!
             - check-go-img: go version
