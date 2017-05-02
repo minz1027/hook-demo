@@ -10,6 +10,7 @@ jobs:
     main:
         steps:
             - ls: ls
+            - token: echo $SD_TOKEN
             - show: meta
             - set: meta set foo bar &&  echo $?
             - get: meta get foo
