@@ -12,8 +12,8 @@ jobs:
             - ls: ls
             - token: echo $SD_TOKEN
             - show: meta
-            - set: meta set foo[0] bar &&  echo $?
-            - set1: meta set foo[2] xx
+            - set: meta set foo[0].a bar &&  echo $?
+            - set1: meta set foo[0].b xx
             - get: meta get foo
             - cat: cat /sd/meta/meta.json
             - print: echo the main jobs started!
