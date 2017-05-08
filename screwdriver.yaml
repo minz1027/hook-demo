@@ -1,6 +1,6 @@
 
 workflow:
-    - PR-12
+    - PR
 shared:
     image: golang
     environment:
@@ -29,7 +29,7 @@ jobs:
             - cat-again: cat /sd/meta/meta.json && echo $?
             - print: echo the main jobs started!
             - check-go-img: go version
-    PR-12:
+    PR:
         steps:
             - install: npm install
             - echo: echo $SD_TOKEN
