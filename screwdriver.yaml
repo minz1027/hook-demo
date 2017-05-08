@@ -9,7 +9,6 @@ shared:
 jobs:
     main:
         steps:
-            - curl: curl -H "Authorization: Bearer $SD_TOKEN" -H "Content-Type: application/json" https://api.screwdriver.cd/v4/pipelines
             - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli && git pull
