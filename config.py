@@ -1,7 +1,7 @@
 #/usr/bin/env python
 import os
  
-def main()
+def main():
 PREFIX = '' if os.environ.get('PREFIX') is None else os.environ.get('PREFIX')
 print(PREFIX)
 
