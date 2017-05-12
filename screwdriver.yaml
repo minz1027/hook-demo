@@ -10,6 +10,7 @@ jobs:
     main:
         steps:
             - test: echo $PREFIX && echo $PREFIX2
+            - py: python ./config.py
             - meta: meta set foo bar
             - meta-get: meta get foo
             - echo: echo hello
