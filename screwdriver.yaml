@@ -15,8 +15,8 @@ jobs:
             - echo: echo hello
             - check-go-img: go version
         environment: 
-            - PREFIX: beta-
-            - PREFIX2: 'beta-'
+            PREFIX: beta-
+            PREFIX2: 'beta-'
     publish:
         steps:
             - echo: echo $SD_TOKEN
