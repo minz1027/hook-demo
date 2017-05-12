@@ -10,18 +10,13 @@ jobs:
     main:
         steps:
             - test: echo hello
-            - sleep: sleep 100 
             - meta: meta set foo bar
             - meta-get: meta get foo
             - echo: echo hello
-            - exit: exit 1
-            - name: test 
-              command: echo the main jobs started!
-              alwaysRun: true
-            - name: test2 
-              command: echo the main jobs started!
-              alwaysRun: true 
             - check-go-img: go version
+        environment: 
+            - PREFIX: beta-
+            - PREFIX2: 'beta-'
     publish:
         steps:
             - echo: echo $SD_TOKEN
