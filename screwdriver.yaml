@@ -9,7 +9,7 @@ shared:
 jobs:
     main:
         steps:
-            - test: echo hello
+            - test: echo $PREFIX && echo $PREFIX2
             - meta: meta set foo bar
             - meta-get: meta get foo
             - echo: echo hello
