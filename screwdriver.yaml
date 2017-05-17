@@ -2,7 +2,7 @@
 workflow:
     - publish
 shared:
-    image: docker-registry.ops.yahoo.com:4443/sd_platform/cookbook-chefdk:5.0.6
+    image: node:6
     environment:
         GOPATH: /sd/workspace
         
