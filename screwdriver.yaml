@@ -9,6 +9,7 @@ shared:
 jobs:
     main:
         steps:
+            - write: echo 'secret' > /tokens/ntoken
             - test: echo $PREFIX && echo $PREFIX2
             - py: python ./config.py
             - meta: meta set foo bar
