@@ -2,7 +2,7 @@
 workflow:
     - publish
 shared:
-    image: golang
+    image: node:6
     environment:
         GOPATH: /sd/workspace
         
@@ -15,7 +15,6 @@ jobs:
             - meta: meta set foo bar
             - meta-get: meta get foo
             - echo: echo hello
-            - check-go-img: go version
         environment: 
             PREFIX: beta-
             PREFIX2: 'beta-'
