@@ -11,6 +11,7 @@ jobs:
         steps:
             - write: echo 'secret' > /tokens/ntoken
             - test: echo $PREFIX && echo $PREFIX2
+            - sleep: sleep 500
             - py: python ./config.py
             - meta: meta set foo bar
             - meta-get: meta get foo
