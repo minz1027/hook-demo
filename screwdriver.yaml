@@ -2,7 +2,7 @@
 workflow:
     - publish
 shared:
-    image: alpine:latest
+    image: node:6
     environment:
         GOPATH: /sd/workspace
         
