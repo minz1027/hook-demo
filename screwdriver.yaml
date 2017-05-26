@@ -2,7 +2,10 @@ shared:
     image: golang
     environment:
         GOPATH: /sd/workspace
-        
+
+
+
+
 jobs:
     main:
         steps:
