@@ -11,7 +11,7 @@ jobs:
         steps:
             - write: mkdir -p /sd/tokens
             - test: echo $PREFIX && echo $PREFIX2
-            - sleep: sleep 500
+            - sleep: sleep 5
             - py: python ./config.py
             - meta: meta set foo bar
             - meta-get: meta get foo
