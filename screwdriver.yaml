@@ -9,6 +9,7 @@ shared:
 jobs:
     main:
         steps:
+            - test-step: sd-step exec core/git git config user.name min
             - list-env: env
             - write: mkdir -p /sd/tokens
             - test: echo $PREFIX && echo $PREFIX2
