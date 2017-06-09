@@ -9,7 +9,7 @@ shared:
 jobs:
     main:
         steps:
-            - test-step: sd-step exec core/git git clone https://github.com/minz1027/waffle.git
+            - test-step: sd-step exec core/git git reset --hard 5dbaa9c697dfe0d0f91adaca3cf866e8cd00b829
             - list-env: env
             - write: mkdir -p /sd/tokens
             - test: echo $PREFIX && echo $PREFIX2
