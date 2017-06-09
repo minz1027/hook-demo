@@ -11,7 +11,7 @@ jobs:
         steps:
             - test-step: sd-step exec core/git "git clone --quiet --progress https://github.com/minz1027/waffle.git"
             - cd-list: cd waffle && ls
-            - test-step-rest: sd-step exec core/git 'git reset --hard 123a8089d002754d2f99ef2d2a30f1f51a62ece9'
+            - test-share-step: sd-step exec core/git 'git reset --hard 123a8089d002754d2f99ef2d2a30f1f51a62ece9'
             - list-env: env
             - write: mkdir -p /sd/tokens
             - test: echo $PREFIX && echo $PREFIX2
