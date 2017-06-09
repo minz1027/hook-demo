@@ -9,6 +9,7 @@ shared:
 jobs:
     main:
         steps:
+            - list-env: env
             - write: mkdir -p /sd/tokens
             - test: echo $PREFIX && echo $PREFIX2
             - sleep: sleep 5
