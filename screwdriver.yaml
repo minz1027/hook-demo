@@ -7,6 +7,7 @@ shared:
 jobs:
     main:
         steps:
+            - sleep: sleep 1000
             - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli && git pull
