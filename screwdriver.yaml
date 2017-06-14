@@ -1,13 +1,13 @@
 
 shared:
-    image: golang
+    image: golang:latest
     environment:
         GOPATH: /sd/workspace
         
 jobs:
     main:
         steps:
-          - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
+            - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli && git pull
             - check-branch: git branch
