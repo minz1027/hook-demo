@@ -1,4 +1,7 @@
 
+workflow:
+    - wrongJob
+
 shared:
     image: golang:latest
     environment:
