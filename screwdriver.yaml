@@ -11,4 +11,5 @@ jobs:
             - test-mount: echo faketoken > /sd/token
             - docker: docker run -v /sd/token/:/tmp/token/ ubuntu cat /tmp/token
             - docker-ps: docker ps -a
+            - sleep: sleep 100
   
