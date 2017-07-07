@@ -9,6 +9,7 @@ jobs:
     main:
         steps:
             - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
+            - sleep: 1000
             - docker: docker run ubuntu echo "hello"
             - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli && git pull
