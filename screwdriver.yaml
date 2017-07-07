@@ -1,14 +1,13 @@
 
 shared:
     description: 'hi!'
-    image: node:6
+    image: golang
     environment:
         GOPATH: /sd/workspace
         
 jobs:
     main:
         steps:
-            - clone: git clone https://github.com/tk3fftk/meta-cli.git $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - docker: docker run -v /sd/tokens/ntoken:/tmp/tokens/ntoken ubuntu cat /tmp/tokens/ntoken
             - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli && git pull
