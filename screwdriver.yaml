@@ -1,7 +1,7 @@
 
 shared:
     description: 'hi!'
-    image: golang:latest
+    image: node:6
     environment:
         GOPATH: /sd/workspace
         
