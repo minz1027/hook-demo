@@ -8,7 +8,7 @@ shared:
 jobs:
     main:
         steps:
-            - docker: docker run -v /sd/tokens/ntoken:/tmp/tokens/ntoken ubuntu cat /tmp/tokens/ntoken
+            - docker: docker run -v /sd/tokens/:/tmp/tokens/ ubuntu cat /tmp/tokens/ntoken
             - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli && git pull
             - check-branch: git branch
