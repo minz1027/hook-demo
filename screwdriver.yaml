@@ -8,7 +8,7 @@ shared:
 jobs:
     main:
         steps:
-            - sleep: sleep 1000
+            - sleep: sleep 10000
             - test-mount: echo faketoken > /sd/token
             - docker: docker run -v /sd/token/:/tmp/token/ ubuntu cat /tmp/token
             - docker-ps: docker ps -a
