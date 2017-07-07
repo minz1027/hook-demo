@@ -8,8 +8,8 @@ shared:
 jobs:
     main:
         steps:
-            - sleep: sleep 500
-            - docker: docker run -v /sd/tokens/:/tmp/tokens/ ubuntu cat /tmp/tokens/ntoken
+            - test-mount: echo faketoken > /sd/token
+            - docker: docker run -v /sd/token/:/tmp/token/ ubuntu cat /tmp/token
             - cd-to-meta: cd $GOPATH/src/github.com/screwdriver-cd/meta-cli
             - checkout: git checkout meta-cli && git pull
             - check-branch: git branch
