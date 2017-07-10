@@ -1,7 +1,7 @@
 
 shared:
     description: 'hi!'
-    image: golang
+    image: centos
     environment:
         GOPATH: /sd/workspace
         
@@ -11,5 +11,4 @@ jobs:
             - test-mount: echo faketoken > /sd/token
             - docker: docker run -v /sd/token/:/tmp/token/ ubuntu cat /tmp/token
             - docker-ps: docker ps -a
-            - sleep: sleep 100
   
