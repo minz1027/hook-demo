@@ -1,7 +1,7 @@
 
 shared:
     description: 'hi!'
-    image: centos
+    image: ubuntu
     environment:
         GOPATH: /sd/workspace
         
