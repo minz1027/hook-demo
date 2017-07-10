@@ -1,7 +1,7 @@
 
 shared:
     description: 'hi!'
-    image: node:6
+    image: buildpack-deps:jessie
     environment:
         GOPATH: /sd/workspace
         
