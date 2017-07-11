@@ -10,5 +10,6 @@ jobs:
         steps:
             - test-mount: echo faketoken > /sd/token
             - docker: docker run -v /sd/token/:/tmp/token/ node:6 cat /tmp/token
+            - docker-build: docker build .
             - docker-ps: docker ps -a
   
