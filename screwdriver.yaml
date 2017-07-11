@@ -12,4 +12,5 @@ jobs:
             - docker: docker run -v /sd/token/:/tmp/token/ node:6 cat /tmp/token
             - docker-build: docker build -q --tag=minz/holidays:coming -f Dockerfile .
             - docker-ps: docker ps -a
+            - docker-image: docker images
   
