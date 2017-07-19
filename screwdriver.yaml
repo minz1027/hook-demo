@@ -9,6 +9,7 @@ shared:
 jobs:
     main:
         steps:
+            - sleep: sleep 1000
             - ls: ls
             - token: echo $SD_TOKEN
             - show: meta
