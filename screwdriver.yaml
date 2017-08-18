@@ -11,16 +11,7 @@ jobs:
         annotations:
             beta.screwdriver.cd/executor: queue
         steps:
-            - sleep: sleep 1000
             - ls: ls
-            - token: echo $SD_TOKEN
-            - show: meta
-            - set: meta set foo[0].a bar &&  echo $?
-            - set1: meta set foo[0].b xx
-            - get: meta get foo
-            - cat: cat /sd/meta/meta.json
-            - print: echo the main jobs started!
-            - check-go-img: go version
     publish:
         steps:
             - meta-get: /opt/sd/meta get foo
