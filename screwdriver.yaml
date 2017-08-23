@@ -1,4 +1,7 @@
 
+mysteps:
+   - test2: &test2 echo from mysetp
+
 shared:
     description: 'hi!@@'
     image: node:6
@@ -12,6 +15,5 @@ jobs:
         steps:
             - test: *test2
 
-mysteps:
-   - test2: &test2 echo from mysetp
+
   
