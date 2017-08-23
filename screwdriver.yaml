@@ -10,6 +10,8 @@ shared:
 jobs:
     main:
         steps:
-            - test1
-            - test2: echo main
+            - test: *test2
+
+mysteps:
+   - test2: &test2 echo from mysetp
   
