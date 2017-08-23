@@ -1,18 +1,14 @@
 
 shared:
     description: 'hi!@@'
-    image: buildpack-deps:jessie
+    image: node:6
+    steps:
+      test1: echo shared
     environment:
         GOPATH: /sd/workspace
         
 jobs:
     main:
-        annotations:
-            beta.screwdriver.cd/executor: queue
         steps:
-            - test-mount: echo faketoken > /sd/token
-            - docker: docker run -v /sd/token/:/tmp/token/ node:6 cat /tmp/token
-            - docker-build: docker build -q --tag=minz/holidays:coming -f Dockerfile .
-            - docker-ps: docker ps -a
-            - docker-image: docker images
+            - test2: echo main
   
