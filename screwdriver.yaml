@@ -1,7 +1,7 @@
 
 shared:
     description: 'hi!@@'
-    image: node:6
+    image: golang:latest
     steps:
       - test1: &test1 echo shared
     environment:
@@ -10,7 +10,7 @@ shared:
 jobs:
     main:
         steps:
-            - test: *test1
+            - sleep: sleep 1000
 
 
   
