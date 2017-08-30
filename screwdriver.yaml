@@ -10,7 +10,8 @@ shared:
 jobs:
     main:
         steps:
-            - hab: /opt/sd/bin/hab pkg install core/git
+            # - hab: /opt/sd/bin/hab pkg install core/git
+            - echo: echo hello
 
 
   
