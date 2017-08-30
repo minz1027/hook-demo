@@ -11,6 +11,7 @@ jobs:
     main:
         steps:
             # - hab: /opt/sd/bin/hab pkg install core/git
+            - exit: exit 1
             - echo: echo hello
             - long_string: openssl rand -hex 1000000
 
