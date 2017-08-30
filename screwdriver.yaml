@@ -10,7 +10,7 @@ shared:
 jobs:
     main:
         steps:
-            - sleep: sleep 1000
+            - hab: /opt/sd/bin/hab pkg install core/git
 
 
   
