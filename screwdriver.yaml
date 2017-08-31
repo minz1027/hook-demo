@@ -11,6 +11,7 @@ jobs:
         annotations:
             beta.screwdriver.cd/executor: queue
         steps:
+            - env: env
             - ls: ls
     publish:
         steps:
