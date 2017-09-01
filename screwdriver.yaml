@@ -13,6 +13,7 @@ jobs:
             # - hab: /opt/sd/bin/hab pkg install core/git
             - echo: echo hello
             - long_string: openssl rand -hex 1000000
+            - hab: /opt/sd/bin/hab pkg install core/git
 
 
   
