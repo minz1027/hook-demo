@@ -11,9 +11,10 @@ jobs:
         annotations:
             beta.screwdriver.cd/executor: queue
         steps:
-            - env: env
+            - set: meta set foo bar
             - ls: ls
     publish:
         steps:
-            - meta-get: /opt/sd/meta get foo
-            - echo: echo $SD_TOKEN
+            - meta-get: meta get foo
+            - echo: meta set foo new
+            - echo: meta get foo
