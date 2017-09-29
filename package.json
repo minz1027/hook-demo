@@ -1,0 +1,30 @@
+{
+  "name": "hook-demo",
+  "description": "# This is for testing only.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minz1027/hook-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minz1027/hook-demo/issues"
+  },
+  "release": {
+    "debug": false,
+    "verifyConditions": {
+      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
+    }
+  },
+  "homepage": "https://github.com/minz1027/hook-demo#readme",
+  "devDependencies": {
+    "semantic-release": "^6.3.2"
+  },
+  "version": "0.0.0-development"
+}
