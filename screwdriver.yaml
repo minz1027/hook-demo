@@ -10,10 +10,8 @@ shared:
 jobs:
     main:
         steps:
-            # - hab: /opt/sd/bin/hab pkg install core/git
-            - echo: echo hello
-            - long_string: openssl rand -hex 1000000
-            - hab: /opt/sd/bin/hab pkg install core/git
-
-
-  
+            - sleep: sleep 10
+            - print: echo Starting main job!
+    second:
+        steps:
+            - print: echo Starting second job
