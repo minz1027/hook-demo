@@ -14,4 +14,4 @@ jobs:
             - print: echo Starting main job
     second:
         steps:
-            - print: echo Starting second job
+            - print: echo Starting second jo
