@@ -11,4 +11,4 @@ jobs:
     main:
         steps:
             - sleep: sleep 10
-            - print: echo Starting main jo
+            - print: echo Starting main j
