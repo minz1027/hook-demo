@@ -9,6 +9,5 @@ shared:
         
 jobs:
     main:
-        requires: [~pr, ~commit]
         steps:
             - print: echo Starting main jo
