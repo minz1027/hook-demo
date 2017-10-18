@@ -15,4 +15,4 @@ jobs:
     other_main:
         requires: ~commit
         steps:
-            - print: echo Starting another main
+            - print: echo Starting another mai
