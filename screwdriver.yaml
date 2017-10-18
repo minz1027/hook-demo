@@ -9,10 +9,5 @@ shared:
         
 jobs:
     main:
-        requires: ~commit
         steps:
             - print: echo Starting main
-    other_main:
-        requires: ~commit
-        steps:
-            - print: echo Starting another main
