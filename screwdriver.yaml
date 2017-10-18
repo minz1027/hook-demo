@@ -9,7 +9,7 @@ shared:
         
 jobs:
     main:
-        requires: ~commit
+        requires: [~commit, ~pr]
         steps:
             - print: echo Starting main
     other_main:
