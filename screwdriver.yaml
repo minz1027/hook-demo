@@ -13,6 +13,6 @@ jobs:
         steps:
             - print: echo Starting main
     other_main:
-        requires: ~commit
+        requires: [~commit, ~pr]
         steps:
             - print: echo Starting another mai
