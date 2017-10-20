@@ -12,8 +12,7 @@ jobs:
     other_main:
         requires: ~commit
         steps:
-            - print: echo running other_main
-            - sleep: sleep 5
+            - other_print: echo running other_main
     publish:
        requires: main
        steps:
@@ -21,5 +20,4 @@ jobs:
     other_publish:
        requires: other_main
        steps:
-           - print: echo running other_publish
-           - sleep: sleep 5
+           - other_print: echo running other_publish
