@@ -1,9 +1,6 @@
 
 shared:
-    description: 'hi!@@'
     image: golang:latest
-    steps:
-      - test1: &test1 echo shared
     environment:
         GOPATH: /sd/workspace
         
@@ -11,16 +8,16 @@ jobs:
     main:
         requires: [~commit, ~pr]
         steps:
-            - print: echo Starting main
+            - print: echo running main
     other_main:
-        requires: [~commit]
+        requires: ~commit
         steps:
-            - print: echo other main
+            - print: echo running other_main
     publish:
        requires: main
        steps:
-           - print: echo publishing it
-    next:
+           - print: echo running publish
+    other_publish:
        requires: other_main
        steps:
-           - print: echo last
+           - print: echo running other_publish
