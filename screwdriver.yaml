@@ -12,7 +12,13 @@ jobs:
         requires: [~commit, ~pr]
         steps:
             - print: echo Starting main
+    other_main:
+        requires: [~commit]
     publish:
        requires: main
        steps:
            - print: echo publishing it
+    next:
+       requires: other_main
+       steps:
+           - print: echo last
