@@ -1,4 +1,4 @@
-# hook-demo
+# new demo
 
 # This is for testing only.
 
