@@ -20,4 +20,4 @@ jobs:
     other_publish:
        requires: other_main
        steps:
-           - other_print: echo running other_publish
+           - other_print: echo running other_publis
