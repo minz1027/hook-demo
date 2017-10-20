@@ -16,3 +16,7 @@ jobs:
         requires: ~commit
         steps:
             - print: echo Starting another mai
+    publish:
+       requires: main
+       steps:
+           - print: echo publishing
