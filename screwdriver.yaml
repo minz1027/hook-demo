@@ -13,7 +13,7 @@ jobs:
         requires: ~commit
         steps:
             - print: echo running other_main
-            - extra_stuff: echo crazy stuff here
+            - sleep: sleep 10
     publish:
        requires: main
        steps:
@@ -22,4 +22,4 @@ jobs:
        requires: other_main
        steps:
            - print: echo running other_publish
-           - extra_stuff: echo crazy stuff here
+           - sleep: sleep 10
