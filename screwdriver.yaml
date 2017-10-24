@@ -5,7 +5,7 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    main:
+    no_main:
         requires: [~commit, ~pr]
         steps:
             - print: echo running main
@@ -14,7 +14,7 @@ jobs:
         steps:
             - other_print: echo running other_main
     publish:
-       requires: main
+       requires: no_main
        steps:
            - print: echo running publish
     other_publish:
