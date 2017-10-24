@@ -9,7 +9,7 @@ jobs:
         requires: [~commit, ~pr]
         steps:
             - print: echo running main
-    d_main:
+    main_agian:
         requires: [~commit, ~pr]
         steps:
             - other_print: echo running other_main
