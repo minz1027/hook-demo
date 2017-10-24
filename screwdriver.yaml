@@ -5,7 +5,7 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    bar_main:
+    x_main:
         requires: [~commit, ~pr]
         steps:
             - print: echo running main
