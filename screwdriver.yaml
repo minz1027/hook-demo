@@ -5,7 +5,7 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    last_main:
+    lasmain:
         requires: [~commit, ~pr]
         steps:
             - print: echo running main
