@@ -5,11 +5,11 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    test_main:
+    main:
         requires: [~commit, ~pr]
         steps:
             - print: echo running main
-    no_main:
+    other_main:
         requires: [~commit, ~pr]
         steps:
             - other_print: echo running other_main
