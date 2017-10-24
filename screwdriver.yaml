@@ -9,7 +9,7 @@ jobs:
         requires: [~commit, ~pr]
         steps:
             - print: echo running main
-    kk_main:
+    o_main:
         requires: [~commit, ~pr]
         steps:
             - other_print: echo running other_main
