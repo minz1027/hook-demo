@@ -1,13 +1,14 @@
 
 workflow:
     - publish
+
 shared:
     image: golang
     environment:
         GOPATH: /sd/workspace
         
 jobs:
-    main:
+    no_main:
         steps:
             - set: meta set foo bar
             - ls: ls
