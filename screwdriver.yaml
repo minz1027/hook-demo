@@ -5,7 +5,7 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    ttqqq:
+    ppppppppp:
         requires: [~commit, ~pr]
         steps:
             - print: echo running main
