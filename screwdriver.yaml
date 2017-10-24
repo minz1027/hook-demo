@@ -5,7 +5,7 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    yy:
+    yyx:
         requires: [~commit, ~pr]
         steps:
             - print: echo running main
