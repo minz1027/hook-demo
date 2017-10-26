@@ -14,6 +14,10 @@ jobs:
         steps:
             - other_print: echo running other_main
     publish:
-       requires: [no_main, other_main]
+       requires: no_main
        steps:
            - print: echo running publish
+    other_publish:
+       requires: other_main
+       steps:
+           - print: echo running other_publish
