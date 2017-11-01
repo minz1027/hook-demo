@@ -4,7 +4,8 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    no_main:
+    main:
+        requires: [~pr, ~commit]
         steps:
             - set: meta set foo bar
             - get: meta get foo
