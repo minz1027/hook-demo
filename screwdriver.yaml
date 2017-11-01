@@ -10,7 +10,7 @@ jobs:
         steps:
             - print: echo running main
     other_main:
-        requires: [~commit, ~pr]
+        requires: [~commit, ~pr, ~sd@241:main]
         steps:
             - other_print: echo running other_main
     publish:
