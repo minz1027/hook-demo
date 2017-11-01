@@ -6,7 +6,7 @@ shared:
         
 jobs:
     no_main:
-        requires: [~commit, ~pr]
+        requires: [~commit, ~pr, ~sd@241:main]
         steps:
             - print: echo running main
     other_main:
