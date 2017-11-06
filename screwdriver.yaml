@@ -9,7 +9,7 @@ jobs:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
             - print: echo running main
-    other_main:
+    new_main:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
             - other_print: echo running other_main
@@ -18,6 +18,6 @@ jobs:
        steps:
            - print: echo running publish
     other_publish:
-       requires: other_main
+       requires: new_main
        steps:
            - print: echo running other_publish
