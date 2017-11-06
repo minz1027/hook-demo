@@ -8,7 +8,7 @@ jobs:
     no_main:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
-            - print: echo running mai!
+            - print: echo running mai!!
     new_main:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
