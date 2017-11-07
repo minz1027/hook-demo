@@ -1,9 +1,11 @@
-
 shared:
     image: golang:latest
     environment:
         GOPATH: /sd/workspace
-        
+
+
+
+
 jobs:
     no_main:
         requires: [~commit, ~pr, ~sd@241:main]
