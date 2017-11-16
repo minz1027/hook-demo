@@ -18,7 +18,7 @@ jobs:
        requires: wow_new_main
        steps:
            - print: echo running other_publish
-     wow_new_main:
-        requires: [~commit, ~pr, ~sd@241:main]
-        steps:
-            - other_print: echo running other_main
+    wow_new_main:
+       requires: [~commit, ~pr, ~sd@241:main]
+       steps:
+           - other_print: echo running other_main
