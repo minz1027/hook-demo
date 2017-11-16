@@ -10,10 +10,6 @@ jobs:
         steps:
             - sleep: sleep 500
             - print: echo $SD_PULL_REQUEST
-    wow_new_main:
-        requires: [~commit, ~pr, ~sd@241:main]
-        steps:
-            - other_print: echo running other_main
     publish:
        requires: no_main
        steps:
@@ -22,3 +18,7 @@ jobs:
        requires: wow_new_main
        steps:
            - print: echo running other_publish
+     wow_new_main:
+        requires: [~commit, ~pr, ~sd@241:main]
+        steps:
+            - other_print: echo running other_main
