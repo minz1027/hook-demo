@@ -6,10 +6,9 @@ shared:
         
 jobs:
     no_main:
-        annotations:
-            beta.screwdriver.cd/executor: k8s-vm
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
+            - sleep: sleep 500
             - print: echo $SD_PULL_REQUEST
     wow_new_main:
         requires: [~commit, ~pr, ~sd@241:main]
