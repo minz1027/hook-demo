@@ -5,7 +5,7 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    no_main:
+    test_test_main:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
             - print: echo $SD_PULL_REQUEST
