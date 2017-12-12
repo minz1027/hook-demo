@@ -5,7 +5,7 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    test_test_main:
+    totally_new_test_test_main:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
             # - sleep: sleep 500
