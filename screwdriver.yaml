@@ -9,7 +9,7 @@ jobs:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
             - print: echo $SD_PULL_REQUEST
-            - exit: exit 1
+            - sleep: sleep 100
             - echo: echo hello
             - test: echo world
     publish:
