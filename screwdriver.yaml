@@ -21,4 +21,4 @@ jobs:
     wow_new_main:
        requires: [~commit, ~pr, ~sd@241:main]
        steps:
-           - other_print: echo running other_main
+           - new_ne_other_print: echo running other_main
