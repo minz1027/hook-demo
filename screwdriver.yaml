@@ -8,7 +8,7 @@ jobs:
     test_test_main:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
-            - sleep: sleep 500
+            # - sleep: sleep 500
             - print: echo $SD_PULL_REQUEST
     publish:
        requires: no_main
