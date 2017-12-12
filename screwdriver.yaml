@@ -8,8 +8,10 @@ jobs:
     no_main:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
-            - sleep: sleep 500
             - print: echo $SD_PULL_REQUEST
+            - exit: exit 1
+            - echo: echo hello
+            - test: echo world
     publish:
        requires: no_main
        steps:
