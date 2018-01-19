@@ -3,6 +3,17 @@ shared:
     image: golang:latest
     environment:
         GOPATH: /sd/workspace
+
+settings:
+    slack: 
+        channels: 
+           - test-slack-notif
+        statuses:
+           - SUCCESS
+           - FAILURE
+           - ABORTED
+           - QUEUED
+           - RUNNING
         
 jobs:
     no_main:
