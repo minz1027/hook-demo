@@ -3,17 +3,6 @@ shared:
     image: golang:latest
     environment:
         GOPATH: /sd/workspace
-
-settings:
-    slack: 
-        channels: 
-           - test-slack-notif
-        statuses:
-           - SUCCESS
-           - FAILURE
-           - ABORTED
-           - QUEUED
-           - RUNNING
         
 jobs:
     no_main:
@@ -23,6 +12,16 @@ jobs:
             - sleep: sleep 100
             - echo: echo hello
             - test: echo world
+        settings:
+            slack: 
+                channels: 
+                   - test-slack-notif
+                statuses:
+                   - SUCCESS
+                   - FAILURE
+                   - ABORTED
+                   - QUEUED
+                   - RUNNING
     publish:
        requires: no_main
        steps:
