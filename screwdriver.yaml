@@ -12,16 +12,9 @@ jobs:
             - sleep: sleep 1
             - echo: echo hello
             - test: echo world
+            - fail: exit 1
         settings:
-            slack: 
-                channels: 
-                   - test-slack-notif
-                statuses:
-                   - SUCCESS
-                   - FAILURE
-                   - ABORTED
-                   - QUEUED
-                   - RUNNING
+            slack: test-slack-notif
     publish:
        requires: no_main
        steps:
