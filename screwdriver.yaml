@@ -14,7 +14,9 @@ jobs:
             - test: echo world
             - fail: exit 1
         settings:
-            slack: test-slack-notif
+            slack: 
+              - test-slack-notif
+              - test-slack-min
     publish:
        requires: no_main
        steps:
