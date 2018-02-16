@@ -11,5 +11,6 @@ jobs:
             - get: meta get foo
     second:
         requries: main
+        steps:
             - get: meta get foo
 
