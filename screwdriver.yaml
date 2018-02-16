@@ -9,4 +9,7 @@ jobs:
         steps:
             - set: meta set foo bar
             - get: meta get foo
+   second:
+        requries: main
+            - get: meta get foo
 
