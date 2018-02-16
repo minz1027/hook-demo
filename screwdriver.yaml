@@ -10,7 +10,7 @@ jobs:
             - set: meta set foo bar
             - get: meta get foo
     second:
-        requires: main
+        requires: [main, ~sd@175:main]
         steps:
             - get: meta get foo
 
