@@ -1,0 +1,11 @@
+shared:
+    image: golang
+    environment:
+        GOPATH: /sd/workspace
+        
+jobs:
+    main:
+        requires: [~pr, ~commit]
+        steps:
+            - set: meta set foo sd@175
+            - get: meta get foo
