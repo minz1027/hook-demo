@@ -7,5 +7,5 @@ jobs:
     main:
         requires: [~pr, ~commit]
         steps:
-            - set: meta set foo sd@175
+            - set: meta set foo sd175
             - get: meta get foo
