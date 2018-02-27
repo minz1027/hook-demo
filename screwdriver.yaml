@@ -12,6 +12,7 @@ jobs:
         steps:
             - set: meta set foo bar
             - get: meta get foo
+            - newstep: echo new!
     second_main:
         requires: [main, ~sd@175:main]
         steps:
