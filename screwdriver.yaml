@@ -22,7 +22,7 @@ jobs:
             - get: meta get foo && meta get foo --external sd@175:main
             - exit: exit 1
     last:
-        requires: [second, third]
+        requires: [second_main,third]
         steps:
             - get: meta get foo && meta get foo --external sd@175:main
 
