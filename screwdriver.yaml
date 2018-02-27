@@ -12,7 +12,7 @@ jobs:
         steps:
             - set: meta set foo bar
             - get: meta get foo
-    second:
+    second_main:
         requires: [main, ~sd@175:main]
         steps:
             - get: meta get foo && meta get foo --external sd@175:main
