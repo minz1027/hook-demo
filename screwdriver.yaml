@@ -7,6 +7,9 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
+    detached:
+        steps:
+            - echo: echo detached
     main:
         requires: [~pr, ~commit]
         steps:
