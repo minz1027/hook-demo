@@ -29,5 +29,5 @@ jobs:
        requires: [~commit, ~pr, ~sd@241:main]
        steps:
            - other_print: echo running other_main && TEST=123
-           - set: meta set docker_tag $TEST
+           - set: meta set docker_tag `git describe --tags`
            - get: meta get docker_tag
