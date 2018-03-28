@@ -15,7 +15,7 @@ jobs:
     no_main:
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
-            - cat: cat log.txt
+            - cat: cat logs.txt
             - print: echo $SD_PULL_REQUEST
             - sleep: sleep 1
             - echo: echo hello
