@@ -20,7 +20,6 @@ jobs:
             - sleep: sleep 1
             - echo: echo hello
             - test: echo world
-            - fail: exit 1
         settings:
             slack: 
               - test-slack-notif
