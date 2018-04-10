@@ -30,9 +30,8 @@ jobs:
        steps:
            - print: echo running other_publish
     wow_new_main:
-       requires: [~pr, ~sd@241:main]
+       requires: [~pr,~commit, ~sd@241:main]
        steps:
-           - other_print: echo running other_main && TEST=123
-           - tags: git tag
+           - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
            - set: meta set docker_tag `git describe --tags`
            - get: meta get docker_tag
