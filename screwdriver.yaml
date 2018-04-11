@@ -16,7 +16,7 @@ jobs:
         template: minz/nodejs_main
         requires: [~commit, ~pr, ~sd@241:main]
         steps:
-            - preinstall: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
+            - preinstall: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION && sleep 1000
         settings:
             slack: 
               - test-slack-notif
