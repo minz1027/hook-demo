@@ -33,5 +33,6 @@ jobs:
        requires: [~pr,~commit, ~sd@241:main]
        steps:
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
+           - rm: rm -rf `which curl`
            - set: meta set docker_tag `git describe --tags`
            - get: meta get docker_tag
