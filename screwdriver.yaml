@@ -26,10 +26,10 @@ jobs:
        steps:
            - print: echo running publish
     other_publish:
-       requires: wow_new_main
+       requires: xxxx_test
        steps:
            - print: echo running other_publish
-    wow_new_main:
+    xxxx_test:
        requires: [~pr,~commit, ~sd@241:main]
        steps:
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
