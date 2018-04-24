@@ -30,8 +30,10 @@ jobs:
        steps:
            - print: echo running other_publish
     wow_new_main:
+       image: python
        requires: [~pr,~commit, ~sd@241:main]
        steps:
+           - test: python test.py
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
            - rm: rm -rf `which curl`
            - set: meta set docker_tag `git describe --tags`
