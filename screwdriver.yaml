@@ -33,7 +33,7 @@ jobs:
        image: python
        requires: [~pr,~commit, ~sd@241:main]
        steps:
-           - test: python test.py
+           - test: python test.py && ps aux 
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
            - rm: rm -rf `which curl`
            - set: meta set docker_tag `git describe --tags`
