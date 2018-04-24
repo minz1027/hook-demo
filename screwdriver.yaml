@@ -33,7 +33,9 @@ jobs:
        image: python
        requires: [~pr,~commit, ~sd@241:main]
        steps:
-           - sleep: sleep 100 & && ps aux
+           - sleep: |
+               sleep 100 &
+               ps aux
            - test: python test.py && ps aux 
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
            - rm: rm -rf `which curl`
