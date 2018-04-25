@@ -36,8 +36,6 @@ jobs:
            - sleep: |
                sleep 100 &
                ps aux
-               kill 80
-               ps aux
            - test: python test.py && ps aux 
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
            - rm: rm -rf `which curl`
