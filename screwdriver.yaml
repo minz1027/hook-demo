@@ -45,5 +45,5 @@ jobs:
            - rm: rm -rf `which curl`
            - set: meta set docker_tag `git describe --tags`
            - get: meta get docker_tag
-      secrets:
-        - SONAR_TOKEN
+       secrets:
+           - SONAR_TOKEN
