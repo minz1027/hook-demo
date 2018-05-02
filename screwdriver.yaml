@@ -33,7 +33,7 @@ jobs:
        image: python
        requires: [~pr,~commit, ~sd@241:main]
        steps:
-           - sonar: sd-step exec inro/sonar-scanner "sonnar-scanner -h"
+           - sonar: sd-step exec inro/sonar-scanner "sonar-scanner -h"
            - test: python test.py && ps aux 
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
            - rm: rm -rf `which curl`
