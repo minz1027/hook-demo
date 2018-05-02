@@ -39,7 +39,7 @@ jobs:
                 export SD_UNZIP_CMD_WRAPPER="$(echo 'sd-step exec --pkg-version 6.0 core/unzip')"
                 $SD_CURL_CMD_WRAPPER "curl -o ./sonarscanner.zip -L https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip"
                 $SD_UNZIP_CMD_WRAPPER "unzip ./sonarscanner.zip"
-                sonarscanner/bin/sonnar-scanner -Dsonar.host.url=https://sonar.screwdriver.cd -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=pipeline:$SD_PIPELINE_ID || true
+                sonarscanner/bin/sonar-scanner -Dsonar.host.url=https://sonar.screwdriver.cd -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=pipeline:$SD_PIPELINE_ID || true
            - test: python test.py && ps aux 
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
            - rm: rm -rf `which curl`
