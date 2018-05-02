@@ -35,7 +35,7 @@ jobs:
        steps:
            - sonar: |
                 if [ `uname` = 'Darwin' ]; then echo code coverage not implemented && exit 0; fi
-                if [ -f sonar-project.properties ]; then echo "No sonar-project.properties file detected. Please check the doc." && exit 0; fi
+                if [ -e sonar-project.properties ]; then echo "No sonar-project.properties file detected. Please check the doc." && exit 0; fi
                 export SD_CURL_CMD_WRAPPER="$(echo 'sd-step exec --pkg-version 7.54.1 core/curl')"
                 export SD_UNZIP_CMD_WRAPPER="$(echo 'sd-step exec --pkg-version 6.0 core/unzip')"
                 $SD_CURL_CMD_WRAPPER "curl -o ./sonarscanner.zip -L https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip"
