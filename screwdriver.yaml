@@ -34,7 +34,7 @@ jobs:
        requires: [~pr,~commit, ~sd@241:main]
        steps:
            - sonar: |
-                `uname` = 'Darwin' ]; then echo code coverage not implemented && exit 0; fi
+                if [ `uname` = 'Darwin' ]; then echo code coverage not implemented && exit 0; fi
                 export SD_CURL_CMD_WRAPPER="$(echo 'sd-step exec --pkg-version 7.54.1 core/curl')"
                 export SD_UNZIP_CMD_WRAPPER="$(echo 'sd-step exec --pkg-version 6.0 core/unzip')"
                 $SD_CURL_CMD_WRAPPER "curl -o ./sonarscanner.zip -L https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip"
