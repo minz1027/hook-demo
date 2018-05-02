@@ -40,7 +40,7 @@ jobs:
                 $SD_CURL_CMD_WRAPPER "curl -o ./sonarscanner.zip -L https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.1.0.1141-linux.zip"
                 $SD_UNZIP_CMD_WRAPPER "unzip -q ./sonarscanner.zip"
                 ls
-                sonar-scanner-3.1.0.1141-linux/bin/sonar-scanner -Dsonar.host.url=https://sonar.screwdriver.cd -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=pipeline:$SD_PIPELINE_ID
+                sonar-scanner-3.1.0.1141-linux/bin/sonar-scanner -Dsonar.source=. -Dsonar.host.url=https://sonar.screwdriver.cd -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=pipeline:$SD_PIPELINE_ID
            - test: python test.py && ps aux 
            - other_print: echo $SD_TEMPLATE_NAME && echo $SD_TEMPLATE_VERSION
            - rm: rm -rf `which curl`
