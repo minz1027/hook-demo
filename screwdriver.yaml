@@ -32,4 +32,5 @@ jobs:
        image: python
        requires: [~pr,~commit, ~sd@241:main]
        steps:
+           - echo: echo $SD_PIPELINE_NAME
            - test: python test.py && ps aux 
