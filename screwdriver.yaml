@@ -13,7 +13,7 @@ jobs:
         steps:
             - meta get foo
     no_main:
-        template: minz/nodejs_main@2.0.0
+        template: minz/nodejs_main
         requires: [~commit, ~pr, ~sd@241:main]
         settings:
             slack: 
