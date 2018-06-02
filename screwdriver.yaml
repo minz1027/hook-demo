@@ -14,7 +14,7 @@ jobs:
             - meta get foo
     no_main:
         annotations:
-            screwdriver.cd/buildPeriodically: '55 * * * Sat'
+            screwdriver.cd/buildPeriodically: '1 * * * Sat'
         template: screwdriver-cd/semantic-release@stable
         requires: [~commit, ~pr, ~sd@241:main]
         settings:
