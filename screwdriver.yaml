@@ -15,7 +15,6 @@ jobs:
     no_main:
         annotations:
             screwdriver.cd/buildPeriodically: '1 * * * Sat'
-        template: screwdriver-cd/semantic-release@stable
         requires: [~commit, ~pr, ~sd@241:main]
         settings:
             slack: 
