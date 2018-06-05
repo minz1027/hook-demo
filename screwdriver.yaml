@@ -5,8 +5,6 @@ shared:
         
 jobs:
     main:
-        annotations:
-            screwdriver.cd/buildPeriodically: '20 * * * *'
         requires: [~pr, ~commit]
         steps:
             - set: meta set foo sd175
