@@ -5,6 +5,8 @@ shared:
         
 jobs:
     main:
+        annotations:
+            beta.screwdriver.cd/timeout: 1
         requires: [~pr, ~commit]
         steps:
             - set: meta set foo sd175
