@@ -9,5 +9,5 @@ jobs:
             beta.screwdriver.cd/timeout: 1
         requires: [~pr, ~commit]
         steps:
-            - set: meta set foo sd175
+            - set: sleep 500
             - get: meta get foo
