@@ -9,5 +9,6 @@ jobs:
             beta.screwdriver.cd/timeout: 1
         requires: [~pr, ~commit]
         steps:
+            - jwt: echo $SD_TOKEN | base64 -D
             - set: sleep 500
             - get: meta get foo
