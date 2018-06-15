@@ -10,5 +10,5 @@ jobs:
         requires: [~pr, ~commit]
         steps:
             - jwt: echo $SD_TOKEN
-            - set: sleep 1000
+            - set: sleep 10000
             - get: meta get foo
