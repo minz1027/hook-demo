@@ -6,9 +6,9 @@ shared:
 jobs:
     main:
         annotations:
-            beta.screwdriver.cd/timeout: 1
+            beta.screwdriver.cd/timeout: 30
         requires: [~pr, ~commit]
         steps:
             - jwt: echo $SD_TOKEN
-            - set: sleep 500
+            - set: sleep 1000
             - get: meta get foo
