@@ -13,24 +13,16 @@ jobs:
         steps:
             - meta get foo
     no_main:
-        annotations:
-            screwdriver.cd/buildPeriodically: '1 * * * Sat'
-        requires: [~commit, ~pr, ~sd@241:main]
+        requires: [~commit, ~pr]
         settings:
             slack: 
               - test-slack-notif
               - test-slack-min
-    publish:
-       requires: no_main
-       steps:
-           - print: echo running publish
-    other_publish:
-       requires: wow_new_main
-       steps:
-           - print: echo running other_publish
+        steps:
+            - cat: cat logs.txt
     wow_new_main:
        image: python
-       requires: [~pr,~commit, ~sd@241:main]
+       requires: [~pr,~commit]
        steps:
            - echo: echo $SD_PIPELINE_NAME
            - test: python test.py && ps aux 
