@@ -5,30 +5,24 @@ shared:
         GOPATH: /sd/workspace
         
 jobs:
-    no_main:
-        requires: [~commit, ~pr, ~sd@241:main]
+    detached:
         steps:
-            - print: echo $SD_PULL_REQUEST
-            - sleep: sleep 1
-            - echo: echo hello
-            - test: echo world
-            - fail: exit 1
+            - meta get foo bar
+    detached_second:
+        requires: detached
+        steps:
+            - meta get foo
+    no_main:
+        requires: [~commit, ~pr]
         settings:
             slack: 
               - test-slack-notif
               - test-slack-min
-    publish:
-       requires: no_main
-       steps:
-           - print: echo running publish
-    other_publish:
-       requires: wow_new_main
-       steps:
-           - print: echo running other_publish
+        steps:
+            - cat: cat logs.txt
     wow_new_main:
-       requires: [~commit, ~pr, ~sd@241:main]
+       image: python
+       requires: [~pr,~commit]
        steps:
-           - other_print: echo running other_main && TEST=123
-           - tags: git tag
-           - set: meta set docker_tag `git describe --tags`
-           - get: meta get docker_tag
+           - echo: echo $SD_PIPELINE_NAME
+           - test: python test.py && ps aux 
