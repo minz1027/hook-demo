@@ -19,7 +19,7 @@ jobs:
               - test-slack-notif
               - test-slack-min
         steps:
-            - cat: cat logs.txt
+            - cat: cat access_log
     wow_new_main:
        image: python
        requires: [~pr,~commit]
