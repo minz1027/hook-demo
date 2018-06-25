@@ -28,4 +28,3 @@ jobs:
                 foo | echo "a"
                 echo "bar"
            - echo: echo $SD_PIPELINE_NAME
-           - test: python test.py && ps aux 
