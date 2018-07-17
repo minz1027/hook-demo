@@ -20,7 +20,7 @@ jobs:
               - test-slack-min
         steps:
             - cat: cat access_log
-    wow_new_main:
+    main:
        image: python
        requires: [~pr,~commit]
        steps:
@@ -28,3 +28,25 @@ jobs:
                 foo | echo "a"
                 echo "bar"
            - echo: echo $SD_PIPELINE_NAME
+   
+    job2:
+        requires: main
+        steps:
+            - hab: ls /hab/pkgs/core
+            - meta: meta set foo bar
+            - write: echo 'aa' > /sd/meta/test.json
+
+    job3:
+        requires: job2
+        steps:
+            - echo: echo hello
+
+    job4:
+        requires: job3
+        steps:
+            - echo: echo hello
+
+    job5:
+        requires: job4
+        steps:
+            - echo: echo hello
