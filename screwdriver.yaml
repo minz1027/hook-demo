@@ -27,7 +27,7 @@ jobs:
            - test: |
                 foo | echo "a"
                 echo "bar"
-           - echo: echo $SD_PIPELINE_NAME
+           - echo: echo $SD_PIPELINE_NAME && sleep 100
    
     job2:
         requires: main
