@@ -20,7 +20,7 @@ jobs:
               - test-slack-notif
               - test-slack-min
         steps:
-            - cat: cat access_log && sleep 10
+            - cat: cat access_log && sleep 100
     main:
        image: python
        requires: [~pr,~commit]
@@ -28,5 +28,5 @@ jobs:
            - test: |
                 foo | echo "a"
                 echo "bar"
-           - echo: echo $SD_PIPELINE_NAME && sleep 10
+           - echo: echo $SD_PIPELINE_NAME && sleep 100
    
