@@ -28,26 +28,5 @@ jobs:
            - test: |
                 foo | echo "a"
                 echo "bar"
-           - echo: echo $SD_PIPELINE_NAME && sleep 100
+           - echo: echo $SD_PIPELINE_NAME
    
-    job2:
-        requires: main
-        steps:
-            - hab: ls /hab/pkgs/core
-            - meta: meta set foo bar
-            - write: echo 'aa' > /sd/meta/test.json
-
-    job3:
-        requires: job2
-        steps:
-            - echo: echo hello
-
-    job4:
-        requires: job3
-        steps:
-            - echo: echo hello
-
-    job5:
-        requires: job4
-        steps:
-            - echo: echo hello
