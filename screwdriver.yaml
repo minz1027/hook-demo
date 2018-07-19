@@ -21,6 +21,13 @@ jobs:
               - test-slack-min
         steps:
             - cat: cat access_log && sleep 100
+            
+    job2:
+        requires: main
+        steps:
+            - hab: ls /hab/pkgs/core
+            - meta: meta set foo bar
+            - write: echo 'aa' > /sd/meta/test.json
     main:
        image: python
        requires: [~pr,~commit]
