@@ -29,9 +29,6 @@ jobs:
             - meta: meta set foo bar
             - write: echo 'aa' > /sd/meta/test.json
     main:
-       annotations:
-           beta.screwdriver.cd/cpu: HIGH
-           beta.screwdriver.cd/ram: HIGH
        image: python
        requires: [~pr,~commit]
        steps:
