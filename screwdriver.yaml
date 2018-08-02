@@ -32,6 +32,7 @@ jobs:
        image: python
        requires: [~pr,~commit]
        steps:
-           - echo: echo hi
-           - echo: echo $SD_PIPELINE_NAME
+           - echo-1: echo hi
+           - echo-2: echo $SD_PIPELINE_NAME
+           - cat: free -m 
    
