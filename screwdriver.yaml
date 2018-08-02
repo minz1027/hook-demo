@@ -32,9 +32,6 @@ jobs:
        image: python
        requires: [~pr,~commit]
        steps:
-           - cpu: cat /proc/meminfo && cat /proc/cpuinfo
-           - test: |
-                foo | echo "a"
-                echo "bar"
-           - echo: echo $SD_PIPELINE_NAME && sleep 100
+           - echo: echo hi
+           - echo: echo $SD_PIPELINE_NAME
    
