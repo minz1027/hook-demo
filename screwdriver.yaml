@@ -1,5 +1,8 @@
 
 shared:
+    annotations:
+        screwdriver.cd/cpu: HIGH
+        beta.screwdriver.cd/ram: HIGH
     image: golang:latest
     environment:
         GOPATH: /sd/workspace
@@ -13,9 +16,6 @@ jobs:
         steps:
             - meta get foo
     source_main:
-        annotations:
-            screwdriver.cd/cpu: HIGH
-            beta.screwdriver.cd/ram: HIGH
         sourcePaths: ["README.md"]
         requires: [~commit, ~pr]
         settings:
@@ -40,4 +40,35 @@ jobs:
            - echo-1: echo hi
            - echo-2: echo $SD_PIPELINE_NAME
            - cat: free -m 
-   
+    main_1:
+       image: python
+       requires: [~pr,~commit]
+       steps:
+           - echo: echo $SD_TOKEN
+           - echo-1: echo hi
+           - echo-2: echo $SD_PIPELINE_NAME
+           - cat: free -m 
+    main_2:
+       image: python
+       requires: [~pr,~commit]
+       steps:
+           - echo: echo $SD_TOKEN
+           - echo-1: echo hi
+           - echo-2: echo $SD_PIPELINE_NAME
+           - cat: free -m 
+    main_3:
+       image: python
+       requires: [~pr,~commit]
+       steps:
+           - echo: echo $SD_TOKEN
+           - echo-1: echo hi
+           - echo-2: echo $SD_PIPELINE_NAME
+           - cat: free -m 
+    main_4:
+       image: python
+       requires: [~pr,~commit]
+       steps:
+           - echo: echo $SD_TOKEN
+           - echo-1: echo hi
+           - echo-2: echo $SD_PIPELINE_NAME
+           - cat: free -m 
