@@ -23,7 +23,7 @@ jobs:
               - test-slack-notif
               - test-slack-min
         steps:
-            - ram: free -m
+            - ram: free -h && cat /proc/cpuinfo
             - cat: cat access_log && sleep 100
             
     job2:
