@@ -13,6 +13,9 @@ jobs:
         steps:
             - meta get foo
     source_main:
+        annotations:
+            screwdriver.cd/cpu: HIGH
+            beta.screwdriver.cd/ram: HIGH
         sourcePaths: ["README.md"]
         requires: [~commit, ~pr]
         settings:
@@ -20,6 +23,7 @@ jobs:
               - test-slack-notif
               - test-slack-min
         steps:
+            - ram: free -m
             - cat: cat access_log && sleep 100
             
     job2:
