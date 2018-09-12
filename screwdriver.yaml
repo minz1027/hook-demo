@@ -16,6 +16,9 @@ jobs:
         steps:
             - meta get foo
     source_main:
+        annotations:
+            screwdriver.cd/disk: HIGH
+        beta.screwdriver.cd/ram: HIGH
         sourcePaths: ["README.md"]
         requires: [~commit, ~pr]
         settings:
