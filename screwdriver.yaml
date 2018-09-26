@@ -1,8 +1,5 @@
 
 shared:
-    annotations:
-        screwdriver.cd/cpu: TURBO
-        beta.screwdriver.cd/ram: TURBO
     image: golang:latest
     environment:
         GOPATH: /sd/workspace
@@ -29,10 +26,14 @@ jobs:
     job2:
         requires: main
         steps:
+            - mem_cpu: nproc --all && free -h 
             - hab: ls /hab/pkgs/core
             - meta: meta set foo bar
             - write: echo 'aa' > /sd/meta/test.json
     main:
+        annotations:
+            screwdriver.cd/cpu: TURBO
+            beta.screwdriver.cd/ram: TURBO
        image: python
        requires: [~pr,~commit]
        steps:
