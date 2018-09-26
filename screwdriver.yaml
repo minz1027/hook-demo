@@ -1,8 +1,8 @@
 
 shared:
     annotations:
-        screwdriver.cd/cpu: HIGH
-        beta.screwdriver.cd/ram: HIGH
+        screwdriver.cd/cpu: TURBO
+        beta.screwdriver.cd/ram: TURBO
     image: golang:latest
     environment:
         GOPATH: /sd/workspace
