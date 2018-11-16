@@ -31,9 +31,6 @@ jobs:
             - meta: meta set foo bar
             - write: echo 'aa' > /sd/meta/test.json
     main:
-       annotations:
-           screwdriver.cd/cpu: TURBO
-           screwdriver.cd/ram: TURBO
        image: python
        requires: [~pr,~commit]
        steps:
