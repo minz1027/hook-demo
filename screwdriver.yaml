@@ -34,6 +34,7 @@ jobs:
        image: python
        requires: [~pr,~commit]
        steps:
+           - ls: ls waffle
            - mem_cpu: nproc --all && free -h 
            - echo-1: echo hi
            - echo-2: echo $SD_PIPELINE_NAME

@@ -1,6 +1,6 @@
 [submodule "executor-base"]
 	path = executor-base
-	url = git@github.com:screwdriver-cd/executor-base.git
+	url = https://github.com/screwdriver-cd/executor-base.git
 [submodule "waffle"]
 	path = waffle
-	url = git@github.com:minz1027/waffle.git
+	url = https://github.com/minz1027/waffle.git
