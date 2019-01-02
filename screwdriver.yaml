@@ -35,7 +35,7 @@ jobs:
        requires: [~pr,~commit]
        steps:
            - ls: ls waffle
-           - meta: meta set foo
+           - meta: meta set foo bar
            - mem_cpu: nproc --all && free -h 
            - echo-1: echo hi
            - echo-2: echo $SD_PIPELINE_NAME
