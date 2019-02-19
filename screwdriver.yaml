@@ -13,7 +13,7 @@ jobs:
         steps:
             - meta get foo
     source_main:
-        sourcePaths: ["README.md"]
+        blockedBy: [~main]
         requires: [~commit, ~pr]
         settings:
             slack: 
