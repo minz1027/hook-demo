@@ -1,5 +1,7 @@
 
 shared:
+    annotations:
+        screwdriver.cd/executor: k8s-vm
     image: golang:latest
     environment:
         GOPATH: /sd/workspace
