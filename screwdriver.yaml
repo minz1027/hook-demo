@@ -5,7 +5,8 @@ shared:
     image: golang
     environment:
         GOPATH: /sd/workspace
-    screwdriver.cd/buildPeriodically: H 10 * * *
+    annotations:
+        screwdriver.cd/buildPeriodically: H 45 * * *
         
 jobs:
     detached:
