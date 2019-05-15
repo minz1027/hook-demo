@@ -1,5 +1,6 @@
 annotations:
     beta.test: 123
+    screwdriver.cd/buildPeriodically: H 0 * * *
 
 shared:
     image: golang
