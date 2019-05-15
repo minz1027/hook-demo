@@ -1,11 +1,11 @@
 annotations:
     beta.test: 123
-    screwdriver.cd/buildPeriodically: H 0 * * *
 
 shared:
     image: golang
     environment:
         GOPATH: /sd/workspace
+    screwdriver.cd/buildPeriodically: H 10 * * *
         
 jobs:
     detached:
