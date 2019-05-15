@@ -6,7 +6,7 @@ shared:
     environment:
         GOPATH: /sd/workspace
     annotations:
-        screwdriver.cd/buildPeriodically: H 45 * * *
+        screwdriver.cd/buildPeriodically: H * * * *
         
 jobs:
     detached:
