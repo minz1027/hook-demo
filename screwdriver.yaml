@@ -20,7 +20,7 @@ jobs:
             - set: meta set foo bar
             - get: meta get foo
             - newstep: echo new!
-    second_main:
+    presecond_main:
         requires: [main]
         steps:
             - get: meta get foo && meta get foo --external sd@175:main
@@ -30,7 +30,7 @@ jobs:
             - get: meta get foo && meta get foo --external sd@175:main
             # - exit: exit 1
     last:
-        requires: [second_main,third]
+        requires: [~presecond_main,third]
         steps:
             - get: meta get foo && meta get foo --external sd@175:main
 
