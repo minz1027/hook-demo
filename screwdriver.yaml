@@ -1,44 +1,35 @@
+annotations:
+    beta.test: 123
 
 shared:
-    annotations:
-        screwdriver.cd/executor: k8s-vm
-    image: golang:latest
+    image: golang
     environment:
         GOPATH: /sd/workspace
+    annotations:
+        screwdriver.cd/buildPeriodically: H * * * *
         
 jobs:
     detached:
+        requires: [~pr:staging, ~commit:staging]
         steps:
-            - meta get foo bar
-    detached_second:
-        requires: detached
-        steps:
-            - meta get foo
-    source_main:
-        blockedBy: [~main]
-        requires: [~commit, ~pr]
-        settings:
-            slack: 
-              - test-slack-notif
-              - test-slack-min
-        steps:
-            - ram: free -h && cat /proc/cpuinfo
-            - cat: cat access_log && sleep 100
-            
-    job2:
-        requires: main
-        steps:
-            - mem_cpu: nproc --all && free -h 
-            - hab: ls /hab/pkgs/core
-            - meta: meta get foo 
-            - write: echo 'aa' > /sd/meta/test.json
+            - echo: echo detached
     main:
-       image: python
-       requires: [~pr,~commit]
-       steps:
-           - ls: ls waffle
-           - meta: meta set foo bar
-           - mem_cpu: nproc --all && free -h 
-           - echo-1: echo hi
-           - echo-2: echo $SD_PIPELINE_NAME
-           - cat: free -m 
+        requires: [~pr, ~commit]
+        steps:
+            - who: whoami
+            - set: meta set foo bar
+            - get: meta get foo
+            - newstep: echo new!
+    psecond_main:
+        requires: [main]
+        steps:
+            - get: meta get foo && meta get foo --external sd@175:main
+    third:
+        requires: [main]
+        steps:
+            - get: meta get foo && meta get foo --external sd@175:main
+            # - exit: exit 1
+    last:
+        requires: [~psecond_main,third]
+        steps:
+            - get: meta get foo && meta get foo --external sd@175:main
