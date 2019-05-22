@@ -10,7 +10,7 @@ shared:
         
 jobs:
     detached:
-        requires: [~pr, ~commit]
+        requires: [~pr:staging, ~commit:staging]
         steps:
             - echo: echo detached
     main:
